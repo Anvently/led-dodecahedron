@@ -7,6 +7,7 @@ A 3D-printed "infinity lights" dodecahedron
 When starting to tinker with LED strips and aiming to embark on a first project with tangible applications, the dodecahedron proves to be an excellent choice for achieving very pleasant results. While the task may not be inherently straightforward and requires a lot of planning and precision, fortunately, there is a plethora of examples and tutorials available for crafting your own "infinity dodecahedron".
 This project was largely based on ([this instructable](https://www.instructables.com/Infinity-Dodecahedron-Mirror/)), which I strongely recommend if you intend to make your own.
 However, in my case, I opted for a different edge model as I aimed to create a smaller dodecahedron (8cm/edge), necessitating thinner and more discreet edges. I relied on a modified version of ([these ones](https://www.printables.com/fr/model/41457-diy-infinity-dodecahedron/comments)), shortening them accordingly using Blender. Additionally, I widened the slots intended for inserting the plexiglass panes (which were 2mm thick) and created three variations to accommodate data cables.
+With edge measuring 8cm and with 144leds/m stripes, we can put 9 leds by edge, which makes a total of 270 leds.
 
 ## Applying one way mirror film
 
@@ -25,4 +26,8 @@ Another challenge is inserting the panes into the slots of the edges, which requ
 ## Controller
 
 To animate and control my LEDs, I used an ESP-32 and ([the very comprehensive WLED system](https://kno.wled.ge/)), which offers multiple ways to interface the LEDs with various software (web app via WiFi, Artnet connection to software like Resolume, DMX connection, etc.). An extension of WLED (Moon-Module) also allows connecting an audio input for sound-reactive or music-responsive lighting effects, making it relatively autonomous. In my case, I used an INMP-441 microphone. It's a digital microphone with an I2S output, avoiding many complications associated with analog signals and potential interference. Since the ESP-32 has a 5V input, all I needed to do was connect everything to a PCB and a USB-C connector.
+
+### Power supply
+
+With 270 leds, I found that restricting WLED to use only about 2.5-3A of current was largely enough to provide cool audio reactive effects, and therefore a simple 5V smartphone adapter can easily do the job.
 
