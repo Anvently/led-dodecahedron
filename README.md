@@ -18,6 +18,10 @@ This is where the biggest challenge of the project lies: assembling the dodecahe
 Gluing the edges should be done in groups of three to avoid gaps at the junctions and to strengthen the structure. However, at certain points, it's necessary to connect different parts of the dodecahedron together and leave spaces for additional edges. Additionally, due to the high density and short length of the edges used, I had to cut the LED strips, leaving minimal space for soldering. Some pads were either damaged or too small, so I sometimes had to solder the cables directly onto the WS2812 pads instead of the PCB. One way to simplify this task would be to ensure the edge length corresponds to the distribution of the LEDs on the strip to have wider pads at the ends each time, but this may waste some LEDs each time (unless making a large dodecahedron). 
 Another challenge is inserting the panes into the slots of the edges, which requires careful planning to ensure there are always at least two free edges to insert the pane (generally, whenever possible, it's preferable to glue the panes simultaneously with the edges).
 
+![building](images/building1.jpg)
+![building](images/building2.jpg)
+![building](images/building3.jpg)
+
 ## Controller
 
 To animate and control my LEDs, I used an ESP-32 and ([the very comprehensive WLED system](https://kno.wled.ge/)), which offers multiple ways to interface the LEDs with various software (web app via WiFi, Artnet connection to software like Resolume, DMX connection, etc.). An extension of WLED (Moon-Module) also allows connecting an audio input for sound-reactive or music-responsive lighting effects, making it relatively autonomous. In my case, I used an INMP-441 microphone. It's a digital microphone with an I2S output, avoiding many complications associated with analog signals and potential interference. Since the ESP-32 has a 5V input, all I needed to do was connect everything to a PCB and a USB-C connector.
